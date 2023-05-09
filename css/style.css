@@ -1,0 +1,109 @@
+
+.navbar{
+    background: rgb(208, 233, 192);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.navbar-toggler{
+    z-index: 4;
+    position: absolute;
+}
+
+.nav-link{
+    color: rgb(88, 24, 69);
+}
+
+body{
+    background-color: rgb(196, 192, 233);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.caja{
+    background-color: rgb(216, 192, 233);
+    border: 1px solid black;
+}
+
+.parrafo1{
+    text-align:justify;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.imagen{
+    
+    height: auto;
+    width:auto;
+    max-width: 100%;
+    display: block;
+    margin-left:auto;
+    margin-right: auto;
+}
+
+.subtitulo{
+    padding-left: 20px;
+}
+
+.container-video{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+video{
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    padding: 0 15px 0 15px;
+}
+
+.negrita{
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.registro{
+    padding-right: 0px;
+}
+
+.footer{
+    text-align: center;
+    background-color: rgb(208, 233, 192);
+    color:  rgb(88, 24, 69);
+}
+
+.wrap{
+
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    margin-right: 180px;
+}
+
+.widget{
+    width: 40%;
+    margin: 32px;
+}
+
+.widget p {
+    display: inline-block;
+    line-height: 1em;
+}
+
+.reloj{
+    width: 100%;
+    padding-left: 15px;
+    font-size: 50px;
+    text-align: center;
+    background: rgba(0,0,0.5);
+}
+
+.reloj .ampm_segundos{
+    display: inline-block;
+}
+
+.reloj .segundos, .reloj .ampm{
+    font-size: 25px;
+    display: block;
+}

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <title>Registro</title>
+  <!-- Latest compiled and minified CSS -->
+  <link href="css/style.css" type="text/css" rel="stylesheet">
+</head>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+
+<script>
+  /*función que envia un saludo */
+  function Saludar(){
+            alert("Bienvenido a JavaScript! ");
+        }
+
+  function CambiaColor(a) {
+    a.style.color = "rgb(0,0,0)";
+  }
+
+  function CambiarMayusculas() {
+    var a = document.getElementById('nombre');
+    a.value = a.value.toUpperCase();
+  }
+
+</script>
+
+
+<script>
+  $(function () {
+    $("#validacion").validate({
+      rules: {
+        nombre: "required",
+        email: {
+          required: true,
+          email: true
+        },
+        fecha: "required",
+        direccion: "required",
+        comuna: "required",
+        password: "required",
+        password2: {
+          required: true,
+          equalTo: '[name="password"]'
+        }
+      }, //rules
+      messages: {
+        nombre: {
+          required: 'Ingrese su nombre',
+        },
+        email: {
+          required: 'Ingresa tu correo electrónico',
+          email: 'Formato de correo no válido'
+        },
+        fecha: {
+          required: 'Seleccione una fecha válida',
+        },
+        direccion: {
+          required: 'Ingrese su dirección',
+        },
+        comuna: {
+          required: 'Seleccione una comuna'
+        },
+        password: {
+          required: 'Ingresa una contraseña',
+          minlength: 'Caracteres insuficientes'
+        },
+        password2: {
+          required: 'Reingresa la contraseña',
+          equalTo: 'Las contraseñas ingresadas no coinciden',
+          minlength: 'Caracteres insuficientes'
+        }
+      }//messages
+    }); //$('#mi-formulario').validate
+  }); //function
+</script>
+<body>
+  <!--menú responsive-->
+  <nav class="navbar navbar-expand-sm">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#opciones">
+    </button>
+
+    <a class="navbar-brand" href="inicio.html">
+      <img src="img/logo.avif" width="30" height="30" alt="">
+    </a>
+
+    <div class="collapse navbar-collapse" id="opciones">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="inicio.html">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="somos.html">Quienes Somos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="galeria.html">Galeria de fotos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="registro.html">Registro</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="api.html">Api Mascotas</a>
+        </li>   
+      </ul>
+    </div>
+  </nav>
+  <!--menú responsive-->
+  <h1 style="text-align: center;" onmouseover="style.color = 'white'" onmouseout="style.color = 'black'"><ins>
+      Registro
+    </ins></h1> <br>
+  <div class="container">
+    <form id="validacion" action="./respuesta.html" method="post">
+      <div class="row">
+        <div class="col">
+
+          <div class="form-group">
+            <label for="nombre">Nombre:</label><br>
+            <input onfocus="CambiaColor(this)" type="text" class="form-control" placeholder="Ingrese Nombre" id="nombre"
+              name="nombre" onchange="CambiarMayusculas()" required><br><br>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Mail</label><br>
+            <input onfocus="CambiaColor(this)" type="email" class="form-control" placeholder="Ingrese Mail" name="email"
+              required><br><br>
+          </div>
+
+          <div class="form-group">
+            <label for="direccion">Direccion</label><br>
+            <input onfocus="CambiaColor(this)" type="text" class="form-control" placeholder="Ingrese Direccion"
+              name="direccion" required><br><br>
+          </div>
+
+        </div>
+        <div class="col">
+
+          <div class="form-group">
+            <label for="fecha">Fecha Nacimiento</label><br>
+            <input type="date" class="form-control" name="fecha" required><br><br>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Contraseña</label><br>
+            <input onfocus="CambiaColor(this)" type="password" class="form-control" placeholder="Ingrese Contraseña"
+              name="password" required><br><br>
+          </div>
+
+          <div class="form-group">
+            <label for="password2">Repetir Contraseña</label><br>
+            <input onfocus="CambiaColor(this)" type="password" class="form-control" placeholder="Reingrese Contraseña"
+              name="password2" required><br><br>
+          </div>
+
+        </div>
+        <div class="col">
+
+          <div class="form-group">
+            <label for="comuna">Elija Su comuna</label><br>
+            <select name="comuna" class="form-control">
+              <option value="">Seleccione Comuna</option>
+              <option value="maipu">Maipú</option>
+              <option value="florida">La Florida</option>
+              <option value="puente">Puente Alto</option>
+              <option value="cisterna">La Cisterna</option>
+              <option value="otras">Otras Comunas</option>
+            </select>
+          </div>
+
+        </div>
+
+        <br><br>
+      </div>
+      <div style="text-align: center;">
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Limpiar">
+        <input type="button" value="Saludo" class="btn btn-warning"
+                 onclick="Saludar()">
+      </div>
+    </form>
+  </div>
+</body>
+<!-- Footer -->
+<footer class=" footer text-lg-start">
+  <!-- Section: Social media -->
+  <!-- Section: Social media -->
+
+  <!-- Section: Links  -->
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <!-- Content -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            <i class="fas fa-gem me-3"></i>WebMascota
+          </h6>
+          <p>
+            Emprendimiento realizado por estudiantes de DuocUC<br>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Productos
+          </h6>
+          <p>
+            <a href="somos.html" class="text-reset">Quienes Somos</a>
+          </p>
+          <p>
+            <a href="galeria.html" class="text-reset">Galeria</a>
+          </p>
+          <p>
+            <a href="registro.html" class="text-reset">Registro</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Contact-
+          </h6>
+          <p><i class="fas fa-home me-3"></i> Av. Esq. Blanca 501, Maipú, Región Metropolitana</p>
+          <p>
+            <i class="fas fa-envelope me-3"></i>
+            vi.monroy@duocuc.cl<br>
+          </p>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <hr>
+      <!-- Grid row -->
+      <form action="respuesta.html" method="post">
+        <div class="form-group">
+          <label for="quien eres">Tu correo: </label>
+          <input onfocus="CambiaColor(this)" type="text" placeholder="Ingrese Correo" name="cor" required><br><br>
+          <label for="comentario">Dejanos un comentario!:</label>
+          <textarea onfocus="CambiaColor(this)" class="form-control" rows="5" id="comentario"></textarea>
+        </div>
+        <input type="submit" value="Enviar">
+
+      </form>
+    </div>
+  </section>
+  <!-- Section: Links  -->
+
+  <!-- Copyright -->
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+    Vicente Monroy<br>@Copyrigth Derechos reservados.
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- jQuery library -->
+
+<!-- Footer -->
+
+</html>
